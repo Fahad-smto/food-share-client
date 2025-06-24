@@ -1,16 +1,18 @@
 import { Outlet } from "react-router";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import NavBar from "../components/Navbar";
+
+
 
 
 const MainLayouts = () => {
     return (
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto bg-[url('/bg3.jpg')] bg-cover bg-no-repeat bg-center min-h-screen">
 
-            <Navbar></Navbar>
+            <NavBar></NavBar>
 
-            <div>
-                 <Outlet></Outlet>
+            <div className="min-h-[calc(100vh-285px)]">
+                <Outlet></Outlet>
             </div>
 
             <Footer></Footer>
