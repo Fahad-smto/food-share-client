@@ -1,23 +1,25 @@
 
-import { use } from "react";
-
-import toast from "react-hot-toast";
+ 
 import { IoMdLogOut } from "react-icons/io";
 import { Link, NavLink } from "react-router";
+import Login from "../pages/Login";
+import { AuthContext } from "../provider/AuthProvider";
+import { use } from "react";
+import toast from "react-hot-toast";
 
 
 const NavBar = () => {
-    // // const { logOut, user } = use( );
+    const { logOut, user } = use(AuthContext);
 
-    // const handleLogout = () => {
-    //     logOut()
-    //         .then(() => {
-    //             toast.success('Logged out successfully');
-    //         })
-    //         .catch(() => {
-    //             toast.error('Something went wrong');
-    //         });
-    // };
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                toast.success('Logged out successfully');
+            })
+            .catch(() => {
+                toast.error('Something went wrong');
+            });
+    };
 
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -64,7 +66,7 @@ const NavBar = () => {
                 </ul>
             </div>
 
-            {/* <div className="navbar-end">
+            <div className="navbar-end">
                 {user ? (
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -84,10 +86,8 @@ const NavBar = () => {
                 ) : (
                     <Link to='/login' className="btn btn-success text-white text-sm">Log in</Link>
                 )}
-            </div> */}
-            <div className="navbar-end">
-                <button className=" btn-success">login</button>
             </div>
+          
         </div>
     );
 };
