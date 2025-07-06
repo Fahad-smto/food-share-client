@@ -33,17 +33,35 @@ const AddFood = () => {
         console.log("Submitted Food:", foodData);
         // TODO: send foodData to your backend
 
-        // Clear form after submission
-        setFormData({
-            name: "",
-            image: "",
-            quantity: "",
-            location: "",
-            expiry: "",
-            notes: "",
+
+        fetch('http://localhost:5000/foods',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(foodData)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.insertedId){
+                toast.success('food added successfully');
+            
+            
+            };
+            
         });
 
-        toast.success("Food item added successfully!");
+
+        // Clear form after submission
+        // setFormData({
+        //     name: "",
+        //     image: "",
+        //     quantity: "",
+        //     location: "",
+        //     expiry: "",
+        //     notes: "",
+        // });
+ 
     };
 
     return (
