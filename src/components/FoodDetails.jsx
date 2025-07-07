@@ -10,7 +10,7 @@ const FoodDetails = () => {
   const [note, setNote] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/foods/${id}`)
+    fetch(`http://localhost:5000/food/${id}`)
       .then((res) => res.json())
       .then((data) => setFood(data));
   }, [id]);

@@ -1,7 +1,7 @@
 import  { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import Swal from 'sweetalert2';
- 
+import Loading from '../components/Loading'
  
 import { AuthContext } from '../provider/AuthProvider';
 
@@ -9,7 +9,7 @@ const ManageMyFood = () => {
     const { user } = useContext(AuthContext);
     const [myFoods, setMyFoods] = useState([]);
     const [editingFood, setEditingFood] = useState(null);
-    // const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
   console.log(myFoods);
     useEffect(() => {
         if (user?.email) {
@@ -18,7 +18,7 @@ const ManageMyFood = () => {
                 .then(data => {
                     console.log(data);
                     setMyFoods(data);
-                    // setLoading(false);
+                    setLoading(false);
                 });
         }
     }, [user]);
@@ -79,9 +79,9 @@ const ManageMyFood = () => {
             });
     };
 
-    // if (!user || loading) {
-    //     return  <p>loading...</p>;
-    // }
+    if (!user || loading) {
+        return  <Loading></Loading>;
+    }
 
     return (
         <div className="p-6">

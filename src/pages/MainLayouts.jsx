@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import Footer from "../components/Footer";
 import NavBar from "../components/Navbar";
-import FeaturedFoods from "../components/FeaturedFoods";
+ 
 
 
 
@@ -15,7 +15,6 @@ const MainLayouts = () => {
             <div className="min-h-[calc(100vh-285px)]">
                 <Outlet></Outlet>
             </div>
-            <FeaturedFoods></FeaturedFoods>
             <Footer></Footer>
 
         </div>

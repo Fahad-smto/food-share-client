@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Loading from "../components/Loading";
  
 
 const FeaturedFoods = () => {
@@ -16,7 +17,7 @@ const FeaturedFoods = () => {
             <h2 className="text-3xl font-bold text-center mb-8 text-primary">🍽️ Featured Foods</h2>
 
             {foods.length === 0 ? (
-                <p>loading...</p>
+                <Loading></Loading>
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                     {foods.map((food) => (

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-  
 import { AuthContext } from "../provider/AuthProvider";
+import Loading from "../components/Loading";
 
 const MyFoodRequest = () => {
   const { user } = useContext(AuthContext);
@@ -18,7 +18,7 @@ const MyFoodRequest = () => {
     }
   }, [user]);
 
-  if (loading) return <p>loading...</p>;
+  if (loading) return  <Loading></Loading>;
 
   return (
     <div className="max-w-6xl mx-auto p-6">
