@@ -1,7 +1,14 @@
+import { useNavigate } from "react-router";
 
 
 const FoodCard = ({ food }) => {
-    const { name, image, quantity, location } = food;
+    const { _id, name, image, quantity, location, status } = food;
+
+    const navigate = useNavigate();
+
+    const handleViewDetails = () => {
+        navigate(`/foods/${_id}`);
+    }
 
     return (
         <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 rounded-2xl">
@@ -20,9 +27,14 @@ const FoodCard = ({ food }) => {
                 <p className="text-gray-600">
                     <span className="font-medium text-black">Location:</span> {location}
                 </p>
+                <p className="text-gray-600">
+                   Status: <span className={status === "available" ? "text-green-600 font-semibold" : "text-red-500 font-semibold"}>
+                        {status}
+                    </span>
+                </p>
                 <div className="mt-4">
-                    <button className="btn btn-outline btn-primary w-full rounded-full">
-                        Request Now
+                    <button onClick={handleViewDetails} className="btn btn-outline btn-primary w-full rounded-full">
+                        View details
                     </button>
                 </div>
             </div>
