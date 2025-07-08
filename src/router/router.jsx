@@ -10,6 +10,7 @@ import MyFoodRequest from "../pages/MyFoodRequest";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import FoodDetails from "../components/FoodDetails";
+import PrivateRoute from "../components/PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -30,15 +31,21 @@ export const router = createBrowserRouter([
         },
         {
           path:'/add_food',
-          element:<AddFood></AddFood>
+          element:<PrivateRoute>
+            <AddFood></AddFood>
+          </PrivateRoute>
         },
         {
           path:'/manage_my_food',
-          element:<ManageMyFood></ManageMyFood>
+          element:<PrivateRoute>
+            <ManageMyFood></ManageMyFood>
+          </PrivateRoute>
         },
         {
           path:'/my_food_request',
-          element:<MyFoodRequest></MyFoodRequest>
+          element:<PrivateRoute>
+            <MyFoodRequest></MyFoodRequest>
+          </PrivateRoute>
         },
         {
           path:'/login',
@@ -50,7 +57,9 @@ export const router = createBrowserRouter([
         },
         {
           path:'/foods/:id',
-          element:<FoodDetails></FoodDetails>
+          element:<PrivateRoute>
+            <FoodDetails></FoodDetails>
+          </PrivateRoute>
         }
     ]
   },

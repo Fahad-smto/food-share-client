@@ -2,6 +2,7 @@ import  { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useParams } from "react-router";
 import { AuthContext } from '../provider/AuthProvider';
+import Loading from "./Loading";
 
 const FoodDetails = () => {
   const { id } = useParams();
@@ -45,7 +46,9 @@ const FoodDetails = () => {
       });
   };
 
-  if (!food) return <div className="text-center mt-10">Loading...</div>;
+  if (!food) return <div className="text-center mt-10">
+    <Loading></Loading>
+  </div>;
 
   return (
     <div className="max-w-3xl mx-auto p-4">
