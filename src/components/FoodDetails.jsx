@@ -66,7 +66,7 @@ const FoodDetails = () => {
         <p><strong>Donator:</strong> {food.donorName} ({food.donorEmail})</p>
         <p>
           <strong>Status:</strong>{" "}
-          <span className={`font-semibold ${food.status === "available" ? "text-green-600" : "text-red-600"}`}>
+          <span className={`font-semibold ${food.status === "available" ? "text-green-500" : "text-red-500"}`}>
             {food.status}
           </span>
         </p>
