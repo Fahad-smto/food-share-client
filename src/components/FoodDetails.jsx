@@ -1,4 +1,4 @@
-import  { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useParams } from "react-router";
 import { AuthContext } from '../provider/AuthProvider';
@@ -23,7 +23,7 @@ const FoodDetails = () => {
       requestDate: new Date().toISOString(),
       additionalNote: note,
       status: "requested",
-    }
+    };
 
     fetch("http://localhost:5000/request-food", {
       method: "POST",
@@ -33,22 +33,27 @@ const FoodDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          // Change status of food
           fetch(`http://localhost:5000/foods/${id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ status: "requested" }),
-          });
-
-          toast.success("Food requested successfully");
-          document.getElementById("request_modal").close();
+          })
+            .then((res) => res.json())
+            .then(() => {
+              // Update local food status immediately to re-render UI
+              setFood((prev) => ({ ...prev, status: "requested" }));
+              toast.success("Food requested successfully");
+              document.getElementById("request_modal").close();
+            });
         }
       });
   };
 
-  if (!food) return <div className="text-center mt-10">
-    <Loading></Loading>
-  </div>;
+  if (!food) return (
+    <div className="text-center mt-10">
+      <Loading />
+    </div>
+  );
 
   return (
     <div className="max-w-3xl mx-auto p-4">
@@ -59,7 +64,13 @@ const FoodDetails = () => {
         <p><strong>Location:</strong> {food.location}</p>
         <p><strong>Expires:</strong> {new Date(food.expiry).toLocaleString()}</p>
         <p><strong>Donator:</strong> {food.donorName} ({food.donorEmail})</p>
-        <p><strong>Status:</strong> <span className="text-success">{food.status}</span></p>
+        <p>
+          <strong>Status:</strong>{" "}
+          <span className={`font-semibold ${food.status === "available" ? "text-green-600" : "text-red-600"}`}>
+            {food.status}
+          </span>
+        </p>
+
         <p><strong>Notes:</strong> {food.notes}</p>
 
         {food.status === "available" ? (
@@ -74,7 +85,7 @@ const FoodDetails = () => {
         )}
       </div>
 
-      {/* ✅ Modal */}
+      {/* Modal */}
       <dialog id="request_modal" className="modal">
         <div className="modal-box max-w-lg m-5">
           <h3 className="font-bold text-lg mb-4">Request Food</h3>
