@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 
 
 const FoodCard = ({ food }) => {
-    const { _id, name, image, quantity, location, status } = food;
+    const { _id, name, image, quantity, location, status,expiry  } = food;
 
     const navigate = useNavigate();
 
@@ -26,6 +26,9 @@ const FoodCard = ({ food }) => {
                 </p>
                 <p className="text-gray-600">
                     <span className="font-medium text-black">Location:</span> {location}
+                </p>
+                <p className="text-gray-600">
+                    <span className="font-medium text-black">expiry Date:</span> {expiry}
                 </p>
                 <p className="text-gray-600">
                    Status: <span className={status === "available" ? "text-green-600 font-semibold" : "text-red-500 font-semibold"}>
