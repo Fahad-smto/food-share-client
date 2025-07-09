@@ -1,5 +1,4 @@
-import React from 'react';
-import { CiSearch } from "react-icons/ci";
+ import { CiSearch } from "react-icons/ci";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
 const Banner = () => {

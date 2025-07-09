@@ -7,7 +7,7 @@ const FeaturedFoods = () => {
     
 
     useEffect(() => {
-        fetch('http://localhost:5000/featured-foods')
+        fetch('https://food-share-server-pi.vercel.app/featured-foods')
             .then(res => res.json())
             .then(data => setFoods(data))
             .catch(err => console.error("Failed to fetch featured foods:", err));

@@ -11,7 +11,7 @@ const FoodDetails = () => {
   const [note, setNote] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/food/${id}`)
+    fetch(`https://food-share-server-pi.vercel.app/food/${id}`)
       .then((res) => res.json())
       .then((data) => setFood(data));
   }, [id]);
@@ -25,7 +25,7 @@ const FoodDetails = () => {
       status: "requested",
     };
 
-    fetch("http://localhost:5000/request-food", {
+    fetch("https://food-share-server-pi.vercel.app/request-food", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestData),
@@ -33,7 +33,7 @@ const FoodDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          fetch(`http://localhost:5000/foods/${id}`, {
+          fetch(`https://food-share-server-pi.vercel.app/foods/${id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ status: "requested" }),

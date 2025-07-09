@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'/available_food',
-          loader:()=>fetch('http://localhost:5000/foods'),
+          loader:()=>fetch('https://food-share-server-pi.vercel.app/foods'),
           element:<AvailableFood></AvailableFood>
         },
         {

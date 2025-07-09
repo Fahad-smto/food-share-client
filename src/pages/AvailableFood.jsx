@@ -10,7 +10,7 @@ const AvailableFood = () => {
     const [columns, setColumns] = useState(3); // default 3 columns
 
     const fetchFoods = () => {
-        let url = `http://localhost:5000/foods`;
+        let url = `https://food-share-server-pi.vercel.app/foods`;
         const params = [];
 
         if (searchTerm) {

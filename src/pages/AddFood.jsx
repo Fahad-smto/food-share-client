@@ -18,7 +18,7 @@ const AddFood = () => {
 
     const mutation = useMutation({
         mutationFn: async (newFood) => {
-            const res = await fetch('http://localhost:5000/foods', {
+            const res = await fetch('https://food-share-server-pi.vercel.app/foods', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newFood),
