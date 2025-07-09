@@ -15,7 +15,7 @@ const Banner = () => {
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-white/30 backdrop-blur-md"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-white/30   "></div>
 
                 {/* Content */}
                 <div className="relative flex items-center justify-center h-full text-center text-white px-4 sm:px-6">
