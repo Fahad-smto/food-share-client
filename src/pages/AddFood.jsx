@@ -82,7 +82,7 @@ const AddFood = () => {
                             <p className="font-semibold">{user?.displayName}</p>
                             <p className="text-sm text-gray-500">{user?.email}</p>
                         </div>
-                        <div className="ml-auto text-sm font-medium text-success">Status: Available</div>
+                        <div className="ml-auto text-sm font-medium ">Status: <span className="text-success"> Available</span> </div>
                     </div>
 
                     <div className="md:col-span-2 text-center mt-4">
