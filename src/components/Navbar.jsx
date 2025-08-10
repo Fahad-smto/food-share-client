@@ -34,12 +34,9 @@ const NavBar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex items-center gap-6 text-gray-700 text-sm font-medium">
-          {[
-            { name: "Home", path: "/" },
-            { name: "Available Foods", path: "/available_food" },
-            { name: "Add Food", path: "/add_food" },
-            { name: "Manage My Foods", path: "/manage_my_food" },
-            { name: "My Food Request", path: "/my_food_request" },
+          {/* Public routes */}
+          {[{ name: "Home", path: "/" },
+              
           ].map((item) => (
             <li key={item.name}>
               <NavLink
@@ -54,7 +51,30 @@ const NavBar = () => {
               </NavLink>
             </li>
           ))}
+
+       
+          {user &&
+            [
+           
+              { name: "Add Food", path: "/add_food" },
+              { name: "Manage My Foods", path: "/manage_my_food" },
+              { name: "My Food Request", path: "/my_food_request" },
+            ].map((item) => (
+              <li key={item.name}>
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "border-b-2 border-orange-500 pb-1 text-orange-600"
+                      : "hover:text-orange-500 transition"
+                  }
+                >
+                  {item.name}
+                </NavLink>
+              </li>
+            ))}
         </ul>
+
 
         {/* User & Hamburger */}
         <div className="flex items-center gap-3">
