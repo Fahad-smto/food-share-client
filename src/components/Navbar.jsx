@@ -36,7 +36,7 @@ const NavBar = () => {
         <ul className="hidden lg:flex items-center gap-6 text-gray-700 text-sm font-medium">
           {/* Public routes */}
           {[{ name: "Home", path: "/" },
-              
+               { name: "Available Foods", path: "/available_food" }
           ].map((item) => (
             <li key={item.name}>
               <NavLink
