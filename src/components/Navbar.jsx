@@ -23,7 +23,8 @@ export default function NavBar() {
 
   // Routes
   const publicRoutes = [{ name: "Home", path: "/" },
-  { name: "Available Foods", path: "/available_food" }
+  { name: "Available Foods", path: "/available_food" },
+  { name: "About", path: "/about" }
   ];
   const privateRoutes = [
 
