@@ -1,5 +1,6 @@
  import { CiSearch } from "react-icons/ci";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
+import { Link } from "react-router";
 
 const Banner = () => {
     return (
@@ -37,9 +38,9 @@ const Banner = () => {
 
                         <div className='flex justify-center'>
                             <Slide direction="up" triggerOnce>
-                                <button className="btn bg-gradient-to-r from-orange-400 to-rose-500 hover:from-orange-500 hover:to-red-500 text-white text-base sm:text-lg px-8 py-3 rounded-full shadow-lg transition duration-300 ease-in-out flex items-center gap-2">
+                                <Link to='/available_food' className="btn bg-gradient-to-r from-orange-400 to-rose-500 hover:from-orange-500 hover:to-red-500 text-white text-base sm:text-lg px-8 py-3 rounded-full shadow-lg transition duration-300 ease-in-out flex items-center gap-2">
                                     Browse Food <CiSearch className="text-xl" />
-                                </button>
+                                </Link >
                             </Slide>
                         </div>
 
