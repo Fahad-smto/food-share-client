@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 
 
 const FoodCard = ({ food }) => {
-    const { _id, name, image, quantity, location, status,expiry  } = food;
+    const { _id, name, image, quantity, location, status, expiry } = food;
 
     const navigate = useNavigate();
 
@@ -21,26 +21,30 @@ const FoodCard = ({ food }) => {
             </figure>
             <div className="card-body p-4">
                 <h2 className="card-title text-xl font-bold text-primary">{name}</h2>
-                <p className="text-gray-600">
-                    <span className="font-medium text-black">Quantity:</span> {quantity}
+
+                <p className="text-base-content">
+                    <span className="font-medium">Quantity:</span> {quantity}
                 </p>
-                <p className="text-gray-600">
-                    <span className="font-medium text-black">Location:</span> {location}
+                <p className="text-base-content">
+                    <span className="font-medium">Location:</span> {location}
                 </p>
-                <p className="text-gray-600">
-                    <span className="font-medium text-black">expiry Date:</span> {expiry}
+                <p className="text-base-content">
+                    <span className="font-medium">Expiry Date:</span> {expiry}
                 </p>
-                <p className="text-gray-600">
-                   Status: <span className={status === "available" ? "text-green-600 font-semibold" : "text-red-500 font-semibold"}>
+
+                <p className="text-base-content">
+                    Status: <span className={status === "available" ? "text-green-600 font-semibold" : "text-red-500 font-semibold"}>
                         {status}
                     </span>
                 </p>
+
                 <div className="mt-4">
                     <button onClick={handleViewDetails} className="btn btn-outline btn-primary w-full rounded-full">
                         View details
                     </button>
                 </div>
             </div>
+
         </div>
     );
 };

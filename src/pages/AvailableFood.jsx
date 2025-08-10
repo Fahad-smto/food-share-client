@@ -7,7 +7,7 @@ const AvailableFood = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [sortOption, setSortOption] = useState('');
     const [loading, setLoading] = useState(true);
-    const [columns, setColumns] = useState(3); // default 3 columns
+    const [columns, setColumns] = useState(3);  
 
     const fetchFoods = () => {
         let url = `https://food-share-server-pi.vercel.app/foods`;
@@ -51,14 +51,14 @@ const AvailableFood = () => {
 
     return (
         <div className="m-5 p-5">
-            <h2 className="text-3xl font-bold mb-4 text-center mt-5">
+            <h2 className="text-3xl font-bold mb-4 text-center mt-5 ">
                 {isFiltered
                     ? searchTerm
                         ? 'Searched Foods'
                         : sortOption === 'expiry'
                             ? 'Sorted by Expiry Date'
                             : 'Sorted by Newest Added'
-                    : 'All Available Foods'}
+                    : <p className='text-base-content'>All Available Foods</p>}
             </h2>
 
             {/* Controls */}
