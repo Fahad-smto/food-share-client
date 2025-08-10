@@ -3,6 +3,7 @@ import FAQSection from "../components/FAQSection";
 import FeaturedFoods from '../components/FeaturedFoods'
 import FoodJourneySimple from "../components/FoodJourneySimple";
 import HowItWorks from "../components/HowItWorks";
+import Testimonials from "../components/Testimonials";
 import WhyFoodSharing from "../components/WhyFoodSharing";
  
 
@@ -15,6 +16,7 @@ const Home = () => {
             <FoodJourneySimple></FoodJourneySimple>
             <FAQSection></FAQSection>
             <HowItWorks></HowItWorks>
+            <Testimonials></Testimonials>
         </div>
     );
 };

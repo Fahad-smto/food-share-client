@@ -36,9 +36,9 @@ export default function NavBar() {
     <nav className="bg-base-100 border-b border-base-300 shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 text-primary font-bold text-xl">
+        <Link to="/" className="flex items-center gap-2  font-bold text-xl">
           <img className="w-[30px]" src="/logo.png" alt="" />
-          Food<span className="text-orange-500">Together</span>
+          Food<span className="text-orange-500 -ml-2">Together</span>
         </Link>
 
         {/* Desktop Menu */}
