@@ -8,7 +8,7 @@ import NavBar from "../components/Navbar";
 
 const MainLayouts = () => {
     return (
-        <div className="max-w-6xl mx-auto bg-[url('/bg3.jpg')] bg-cover bg-no-repeat bg-center min-h-screen">
+        <div className="  mx-auto bg-[url('/bg3.jpg')] bg-cover bg-no-repeat bg-center min-h-screen">
 
             <NavBar></NavBar>
 

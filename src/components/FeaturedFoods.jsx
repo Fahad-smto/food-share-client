@@ -20,7 +20,7 @@ const FeaturedFoods = () => {
             {foods.length === 0 ? (
                 <Loading />
             ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
                     {foods.map((food) => (
                         <div key={food._id} className="card bg-base-100 shadow-lg rounded-xl hover:shadow-2xl transition-shadow">
                             <figure>
@@ -33,8 +33,8 @@ const FeaturedFoods = () => {
                             <div className="card-body">
                                 <h3 className="card-title text-xl text-primary">{food.name}</h3>
                                 <p><strong>Quantity:</strong> {food.quantity}</p>
-                                <p><strong>Location:</strong> {food.location}</p>
-                                <p><strong>Expires:</strong> {new Date(food.expiry).toLocaleDateString()}</p>
+                                {/* <p><strong>Location:</strong> {food.location}</p>
+                                <p><strong>Expires:</strong> {new Date(food.expiry).toLocaleDateString()}</p> */}
                                 <p>
                                     <strong>Status:</strong>{" "}
                                     <span className={`font-semibold ${food.status === "available" ? "text-green-600" : "text-red-500"}`}>
