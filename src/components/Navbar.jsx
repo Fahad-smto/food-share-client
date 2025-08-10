@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { IoMdLogOut } from "react-icons/io";
 import toast from "react-hot-toast";
-import { FaUtensils } from "react-icons/fa";
+ 
 
 export default function NavBar() {
   const { logOut, user } = useContext(AuthContext);
